@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="БурмалдаИнвест — учебный лендинг об инвестиционных услугах.">
+<title>БурмалдаИнвест — Инвестиции в фокусе</title>
+<style>
+:root{color-scheme:dark;--ink:#0b0d10;--text:#f3f6f8;--ice:#c4e6f1;--rule:#353b44;--mute:#aeb9c4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font:16px/1.5 Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid #598cff;outline-offset:5px}
+.wrap{max-width:1360px;margin:auto;padding:0 5%}
+header{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:86px;border-bottom:1px solid var(--rule)}
+.brand{display:inline-flex;gap:12px;align-items:center;font-weight:800;letter-spacing:.11em;white-space:nowrap}
+.mark{display:inline-block;width:20px;height:20px;border:2px solid currentColor;transform:rotate(45deg);position:relative;margin:0 4px}
+.mark::after{content:"";position:absolute;inset:4px;border:1px solid currentColor}
+nav{display:flex;gap:28px;color:var(--mute)}
+nav a:hover{color:white}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;background:var(--ice);color:#0a1622;font-weight:700;border:1px solid transparent;transition:background .2s,color .2s}
+.cta:hover{background:#fff;color:#173e99}
+.eyebrow,.meta{font:13px/1.4 monospace;text-transform:uppercase;letter-spacing:.12em}
+.hero{display:grid;grid-template-columns:1.12fr 1fr;align-items:center;min-height:590px;isolation:isolate;border-bottom:1px solid var(--rule)}
+.hero-copy{position:relative;z-index:1;padding:48px 0}
+.eyebrow{color:var(--ice);margin:0 0 24px}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(55px,8vw,116px);font-weight:500;line-height:.89;letter-spacing:-.075em;margin-bottom:30px}
+h1 span{display:block;color:var(--ice)}
+.lead{font-size:19px;color:var(--mute);max-width:33ch;margin-bottom:28px}
+.art{height:100%;min-height:340px;position:relative;overflow:hidden;display:grid;place-items:center;background:radial-gradient(ellipse at 52% 50%,#1a3471 0%,#101a2b 40%,transparent 71%)}
+.art::before{content:"";position:absolute;inset:12% 4%;background:linear-gradient(#95b7f31a 1px,transparent 1px),linear-gradient(90deg,#95b7f31a 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse,#000 10%,transparent 72%)}
+.object{width:61%;aspect-ratio:1;position:relative;display:grid;place-items:center;transform:rotate(-31deg) skewX(13deg)}
+.plate{position:absolute;width:85%;height:63%;border:1px solid #b2dcff;box-shadow:0 15px 35px #0008,inset 0 0 38px #89baff24;background:linear-gradient(137deg,#8cbaff5c,#244bbebf 49%,#09173785)}
+.plate:nth-child(1){transform:translate(20%,30%);background:linear-gradient(135deg,#213364,#102454)}
+.plate:nth-child(2){transform:translate(10%,15%)}
+.plate:nth-child(3){transform:translate(0,0);background:linear-gradient(140deg,#b2dfff85,#3665d6c2 48%,#102969d9)}
+.plate:nth-child(4){transform:translate(-10%,-15%);background:linear-gradient(132deg,#d5f5ff57,#5a8dff52 53%,#243e766e)}
+.plate:nth-child(5){transform:translate(-20%,-30%);display:grid;align-items:end;padding:9%;grid-template-columns:repeat(7,1fr);gap:7%;background:linear-gradient(135deg,#c5eeff5c,#3b6aec52 65%,#132a6d50)}
+.bar{height:var(--height);background:linear-gradient(#d6faff,#4f80fc77);box-shadow:0 0 20px #7fb9ff80}
+.art .meta{position:absolute;bottom:20px;right:0;color:#9cacc1}
+.services{background:var(--ice);color:#101925}
+.services .wrap{padding-top:64px;padding-bottom:64px}
+.section-top{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:24px;margin-bottom:32px}
+h2{font-size:clamp(43px,6vw,82px);line-height:.94;letter-spacing:-.065em;font-weight:500;margin-bottom:0}
+.section-top p{max-width:42ch;margin-bottom:0}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid #779aa9;margin-bottom:28px}
+article{padding:26px 30px 14px 0}
+article+article{border-left:1px solid #779aa9;padding-left:30px}
+h3{font-size:25px;line-height:1.15;letter-spacing:-.04em;margin-bottom:12px}
+article p{max-width:30ch;color:#2c4655}
+.services .cta{background:#101925;color:white}
+.services .cta:hover{background:#243e76}
+.final{padding:64px 0;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.final p{color:var(--mute);margin:18px 0 0;max-width:48ch}
+footer{border-top:1px solid var(--rule);padding:22px 0 30px;color:var(--mute);font-size:14px}
+@media(max-width:850px){nav{display:none}.hero{min-height:490px}.art{margin-left:-7%}}
+@media(max-width:620px){header{min-height:72px;gap:12px}.brand{font-size:13px;gap:6px}.mark{width:16px;height:16px}.mark::after{inset:3px}.cta{padding:10px 12px;font-size:14px}.hero,.section-top,.service-grid{grid-template-columns:1fr}.hero-copy{padding:44px 0 0}.art{height:300px;min-height:0;margin:0}.object{width:min(60%,260px)}.services .wrap,.final{padding-top:48px;padding-bottom:48px}article,article+article{padding:20px 0 4px;border-left:0}article+article{border-top:1px solid #779aa9}.final{display:block}.final .cta{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta{transition:none}}
+</style>
+<link rel="stylesheet" href="glass.css">
+<script src="glass.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a class="brand" href="#top" aria-label="БурмалдаИнвест, начало страницы"><span class="mark" aria-hidden="true"></span>БурмалдаИнвест</a>
+<nav aria-label="Разделы"><a href="#services">Услуги</a><a href="#company">Компания</a><a href="#process">Подход</a><a href="#faq">FAQ</a><a href="#contacts">Контакты</a></nav>
+</header>
+</div>
+<main id="top">
+<div class="wrap">
+<section class="hero" aria-labelledby="headline">
+<div class="hero-copy">
+<p class="eyebrow">Инвестиционные услуги</p>
+<h1 id="headline">Инвестиции <span>в фокусе</span></h1>
+<p class="lead">Разберитесь, как ваш портфель связан с вашими целями, сроками и отношением к риску.</p>
+<a class="cta" href="https://mrqz.me/6aec1d73b27533000f1670b9">Оценить свои инвестиции</a>
+</div>
+<aside class="cover-note"><span>Наш подход</span><p>Сначала цель.<br>Затем <em>стратегия.</em></p><a href="#process">Как проходит разбор</a></aside>
+</section>
+</div>
+<section class="services reveal" id="services" aria-labelledby="services-title">
+<div class="wrap">
+<div class="section-top"><h2 id="services-title">Что в фокусе</h2><p>Шесть направлений работы с портфелем и инвестиционной стратегией.</p></div>
+<div class="service-grid">
+<article><h3>Разбор портфеля</h3><p>Какие активы у вас уже есть и насколько портфель зависит от отдельных компаний или отраслей.</p></article>
+<article><h3>Планирование стратегии</h3><p>На какой срок вы готовы инвестировать и как этот срок связан с вашими финансовыми целями.</p></article>
+<article><h3>Оценка рисков</h3><p>Какие колебания стоимости портфеля для вас приемлемы и как на них могут повлиять разные активы.</p></article>
+<article><h3>Диверсификация</h3><p>Проверяем, как распределены вложения между классами активов и где портфель слишком сильно зависит от одного сценария.</p></article>
+<article><h3>Темы для пересмотра</h3><p>Определяем, какие вопросы к портфелю стоит пересмотреть, если изменились доходы, цели или сроки.</p></article>
+<article><h3>Разбор расходов</h3><p>Объясняем, как комиссии и другие расходы влияют на итоговый результат.</p></article>
+</div>
+</div>
+</section>
+<div class="wrap">
+<section class="chapter reveal" id="company" aria-labelledby="company-title">
+  <div class="editorial-spread">
+  <div class="chapter-intro"><p class="eyebrow">О компании</p><h2 id="company-title">Как мы смотрим на инвестиции</h2>
+  <p>В «БурмалдаИнвест» мы помогаем связать решения по портфелю с конкретными жизненными планами: от крупной покупки до долгосрочных накоплений.</p></div>
+  <figure class="photo photo-right glass"><img src="images/portfolio-review.jpg" width="1120" height="747" loading="lazy" decoding="async" alt="Аналитик рассматривает биржевые графики на ноутбуке"></figure>
+  </div>
+  <div class="principles">
+    <article class="glass"><h3>Цель задаёт срок</h3><p>Деньги на покупку через год и долгосрочные накопления требуют разных решений. Начинаем с того, когда и на что понадобятся средства.</p></article>
+    <article class="glass"><h3>Риск в понятных примерах</h3><p>Показываем, что будет означать снижение стоимости портфеля для конкретного плана и какие решения сейчас зависят от этого риска.</p></article>
+    <article class="glass"><h3>Прозрачная логика решений</h3><p>Объясняем, почему каждый вопрос важен и какие допущения влияют на выводы.</p></article>
+  </div>
+</section>
+<section class="chapter reveal" id="process" aria-labelledby="process-title">
+  <div class="chapter-intro"><p class="eyebrow">Как работаем</p><h2 id="process-title">Как проходит разбор</h2></div>
+  <div class="process-layout">
+  <ol class="steps">
+    <li><h3>Уточняем исходную точку</h3><p>Какая у вас цель, на какой срок вы планируете и есть ли у вас уже инвестиции.</p></li>
+    <li><h3>Разбираем, от чего зависит результат</h3><p>Смотрим на состав портфеля, расходы и ситуации, в которых планы могут измениться.</p></li>
+    <li><h3>Намечаем следующие шаги</h3><p>Фиксируем вопросы, к которым стоит вернуться, и события, после которых имеет смысл снова посмотреть на портфель.</p></li>
+  </ol>
+  <figure class="photo photo-left glass"><img src="images/market-chart.jpg" width="1120" height="747" loading="lazy" decoding="async" alt="Биржевой график на экране ноутбука крупным планом"></figure>
+  </div>
+</section>
+<section class="chapter reveal" id="faq" aria-labelledby="faq-title">
+  <div class="chapter-intro"><p class="eyebrow">FAQ</p><h2 id="faq-title">Частые вопросы</h2></div>
+  <div class="faq-groups">
+    <section class="faq-group" aria-labelledby="faq-group-1">
+      <h3 id="faq-group-1">Начало инвестирования</h3>
+      <div class="questions">
+    <details class="glass"><summary>Можно пройти квиз без портфеля?</summary><p>Да. Начните с того, зачем вам инвестиции, когда могут понадобиться деньги и какие колебания вы готовы принять.</p></details>
+    <details class="glass"><summary>Что если у меня несколько целей?</summary><p>У каждой цели может быть свой срок. Для начала выберите ту, которая сейчас важнее всего.</p></details>
+      </div>
+    </section>
+    <section class="faq-group" aria-labelledby="faq-group-2">
+      <h3 id="faq-group-2">Портфель и стратегия</h3>
+      <div class="questions">
+    <details class="glass"><summary>Какие данные пригодятся для разбора портфеля?</summary><p>Для разговора пригодятся список активов, примерные доли и информация о комиссиях. Пароли и коды доступа к брокерскому счёту для разбора не нужны.</p></details>
+    <details class="glass"><summary>Когда стоит вернуться к стратегии?</summary><p>Когда меняются цели, сроки или доходы, а также если доли активов заметно отошли от запланированных.</p></details>
+      </div>
+    </section>
+    <section class="faq-group" aria-labelledby="faq-group-3">
+      <h3 id="faq-group-3">Результат квиза</h3>
+      <div class="questions">
+    <details class="glass"><summary>Даст ли квиз персональную рекомендацию?</summary><p>Квиз помогает сформулировать вопросы для дальнейшего разбора. Персональная рекомендация требует отдельного анализа вашей ситуации.</p></details>
+      </div>
+    </section>
+  </div>
+</section>
+<section class="final glass panel reveal" id="quiz" aria-labelledby="quiz-title">
+  <div><h2 id="quiz-title">С чего начать?</h2><p>Если вы только знакомитесь с инвестициями, начните с цели. Если портфель уже есть, используйте квиз, чтобы сформулировать вопросы о его составе, рисках и сроках.</p></div>
+  <a class="cta" href="https://mrqz.me/6aec1d73b27533000f1670b9">Оценить свои инвестиции</a>
+</section>
+</div>
+</main>
+<div class="wrap">
+<footer id="contacts" class="contact-footer">
+  <div><h2>Контакты</h2><p>БурмалдаИнвест · Вымышленная компания, учебный проект по маркетингу</p></div>
+  <address>
+    <dl>
+      <div><dt>Контактное лицо</dt><dd>Майнезов Мелстрой Бурмалденсович</dd></div>
+      <div><dt>Юридический адрес</dt><dd>ул. Майонезная д. 13 к 37</dd></div>
+      <div><dt>Телефон</dt><dd><a href="tel:+798714881337">+798714881337</a></dd></div>
+    </dl>
+  </address>
+</footer>
+</div>
+<dialog class="meme glass" id="meme" aria-labelledby="meme-title">
+  <h2 id="meme-title">ВАШ КОМПЬЮТЕР СЕЙЧАС ВЗОРВЕТСЯ</h2>
+  <img src="images/mayonnaise-meme.jpg" width="1000" height="978" alt="Мем про майонез и БурмалдаИнвест">
+  <form method="dialog"><button class="cta" type="submit" autofocus>Я БУДУ</button></form>
+</dialog>
+</body>
+</html>
